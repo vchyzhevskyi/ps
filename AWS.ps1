@@ -22,6 +22,7 @@ function List-AmazonS3Buckets ($AccessKeyId, $SecretAccessKey) {
         $respStreamReader = New-Object System.IO.StreamReader -arg $_.Exception.Response.GetResponseStream();
         Write-Host $respStreamReader.ReadToEnd();
     }
+    $hasher.Dispose();
 }
 
 function List-AmazonS3BucketObjects ($AccessKeyId, $SecretAccessKey, $Bucket) {
@@ -47,4 +48,5 @@ function List-AmazonS3BucketObjects ($AccessKeyId, $SecretAccessKey, $Bucket) {
         $respStreamReader = New-Object System.IO.StreamReader -arg $_.Exception.Response.GetResponseStream();
         Write-Host $respStreamReader.ReadToEnd();
     }
+    $hasher.Dispose();
 }
